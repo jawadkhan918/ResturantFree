@@ -1,0 +1,154 @@
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="25dp"
+        android:layout_above="@+id/bottom_layout"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/bottom_layout"
+
+        >
+        <LinearLayout
+            android:paddingLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Quantity:   "
+                android:id="@+id/quantity"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Subtotal :   "
+                android:id="@+id/subtotal"
+                />
+
+
+            <TextView
+
+                android:id="@+id/subtotal_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="$ 15.00"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/pop_up"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+
+                >
+                <Button
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Hold"
+                    android:textAllCaps="false"
+                    android:background="#0000ff"
+                    />
+                <Button
+                    android:background="#ffff00"
+                    android:text="Quantity"
+
+                    android:textAllCaps="false"
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:background="#ADFF2F"
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Modifier"
+                    android:textAllCaps="false"
+
+                    />
+                <Button
+                    android:background="#800080"
+                    android:text="Kitchen Note"
+                    android:textAllCaps="false"
+                    android:layout_width="10dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:id="@+id/sendButton"
+            android:layout_height="50dp"
+            android:text="Send"
+            android:textSize="15sp"
+            android:background="#CC0000"
+            />
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

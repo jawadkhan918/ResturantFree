@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/orderheader"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#000000"
+        android:weightSum="3"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:text="B"
+            android:layout_weight="0.5"
+            android:textAllCaps="false"
+            android:background="#733234"
+            />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Item"
+            android:textAllCaps="false"
+            android:background="#00d204"
+            android:id="@+id/takeoutBtn"
+            />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Customer"
+            android:textAllCaps="false"
+            android:background="#66cccc"
+            android:id="@+id/orderButton"
+            />
+        <Button
+            android:id="@+id/menuBtn"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:text=":"
+            android:layout_weight="0.5"
+            android:background="#d3a86c"
+            />
+
+
+    </LinearLayout>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:tabMode="fixed"
+
+
+                app:tabGravity="fill"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+</LinearLayout>

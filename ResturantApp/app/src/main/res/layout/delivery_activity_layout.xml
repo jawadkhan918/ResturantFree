@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="Tel"
+            android:paddingTop="10dp"
+            android:gravity="right"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:lines="1"
+            android:hint="Phone number"
+            android:inputType="number"
+            android:gravity="left"
+            android:textSize="15sp"
+            android:id="@+id/tel"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="Name"
+            android:paddingTop="10dp"
+            android:gravity="right"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:lines="1"
+            android:hint="Customer Name"
+            android:textSize="15sp"
+            android:id="@+id/name"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+
+            android:text="Address"
+            android:paddingTop="10dp"
+            android:gravity="right"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+        <EditText
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:lines="1"
+            android:hint="Address line 1"
+            android:textSize="15sp"
+            android:id="@+id/address1"/>
+
+
+            <EditText
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Address line 2"
+                android:singleLine="true"
+                android:lines="1"
+                android:id="@+id/address2"
+                android:textSize="15sp"/>
+
+
+            <EditText
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Address line 3"
+                android:singleLine="true"
+                android:lines="1"
+                android:textSize="15sp"
+                android:id="@+id/address3"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="Zip Code"
+            android:paddingTop="10dp"
+            android:gravity="right"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:lines="1"
+            android:hint="Zip Code"
+            android:gravity="left"
+            android:textSize="15sp"
+            android:id="@+id/zipCode"/>
+        
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="Mail"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:lines="1"
+            android:gravity="right"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:lines="1"
+            android:layout_height="match_parent"
+            android:hint="Email address"
+            android:gravity="left"
+            android:textSize="15sp"
+            android:id="@+id/mail"/>
+
+
+    </LinearLayout>
+
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp">
+    <RadioGroup
+        android:id="@+id/optionGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       android:checkedButton="@+id/deliveryRadio"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery"
+            android:id="@+id/deliveryRadio"
+            />
+
+        <RadioButton
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick up"
+            android:id="@+id/pickUpRadio"
+            />
+
+    </RadioGroup>
+</LinearLayout>
+
+    <LinearLayout
+       android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/timingGroup"
+            android:checkedButton="@+id/nowRadio">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Now"
+                android:checked="true"
+                android:id="@+id/nowRadio"
+                />
+
+            <RadioButton
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery time"
+                android:id="@+id/timeRadio"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/timeText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="time"
+            android:gravity="right"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <Button
+        android:layout_width="match_parent"
+        android:text="Confirm"
+        android:id="@+id/confirmButton"
+        android:textColor="#FFFFFF"
+        android:layout_height="50dp"
+        android:background="#CC3333"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,101 @@
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back"
+            android:id="@+id/backButton"
+            android:textAllCaps="false"
+            android:background="#733234"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hold"
+            android:textAllCaps="false"
+            android:background="#00d204"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retrieve"
+            android:textAllCaps="false"
+            android:background="#c69587"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:textAllCaps="false"
+            android:background="#66cccc"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item"
+            android:textAllCaps="false"
+            android:background="#d3a86c"
+            android:id="@+id/itemButton"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="No Records"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+
+
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:text="Send"
+            android:background="#FF0000"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

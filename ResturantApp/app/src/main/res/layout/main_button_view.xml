@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000">
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#000000"
+        android:weightSum="5"
+        >
+        <Button
+            android:id="@+id/deliveryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Delivery"
+            android:layout_weight="1.1"
+            android:textAllCaps="false"
+            android:background="#D0f8ff"
+            />
+
+        <Button
+            android:layout_weight="1.1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Takeout"
+            android:textAllCaps="false"
+            android:background="#cdaa7d"
+           android:id="@+id/takeoutBtn"
+            />
+
+        <Button
+            android:layout_weight="1.1"
+            android:id="@+id/tabButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Tab"
+            android:textAllCaps="false"
+            android:background="#bcee68"
+
+            />
+
+        <Button
+            android:layout_weight="1.1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Orders"
+            android:textAllCaps="false"
+            android:background="#66cccc"
+            android:id="@+id/orderButton"
+            />
+<RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+    android:gravity="bottom"
+        android:orientation="vertical"
+    >
+
+        <Button
+            android:id="@+id/menuBtn"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text=":"
+            android:layout_weight=".6"
+
+            android:background="#9acd32"
+
+            />
+
+        <Spinner
+            android:dropDownWidth="250dp"
+            android:id="@+id/spinner"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:background="#d3a86c"
+        android:visibility="invisible"
+            />
+
+ </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/header"
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
