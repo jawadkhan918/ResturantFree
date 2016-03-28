@@ -17,7 +17,7 @@ public class TakeoutActivity  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.takeout_layout);
-        backBtn = (Button) findViewById(R.id.backButton);
+       /* backBtn = (Button) findViewById(R.id.backButton);
         clearBtn = (Button) findViewById(R.id.clearButton);
 //        customerBtn = (Button) findViewById(R.id.customerButton);
   //      guestBtn = (Button) findViewById(R.id.guestButton);
@@ -134,7 +134,7 @@ public class TakeoutActivity  extends AppCompatActivity {
             }
         });
 
-
+*/
 
     }
 }
