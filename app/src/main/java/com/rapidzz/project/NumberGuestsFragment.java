@@ -5,6 +5,7 @@ import android.app.DialogFragment;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -14,10 +15,16 @@ import android.widget.Button;
  */public class NumberGuestsFragment  extends DialogFragment {
 
     private Dialog dialog;
-
+String tableNo;
     Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12;
 
 
+    public NumberGuestsFragment(){
+    }
+    public NumberGuestsFragment(String tableNo){
+        this.tableNo = tableNo;
+        Log.d("TableNO",tableNo);
+    }
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -35,7 +42,10 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
+
                 dismiss();
             }
         });
@@ -47,6 +57,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -59,6 +71,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -71,6 +85,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -83,6 +99,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -95,6 +113,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -107,6 +127,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -119,6 +141,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -131,6 +155,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -143,6 +169,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -155,6 +183,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -167,6 +197,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }
@@ -180,6 +212,8 @@ import android.widget.Button;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
+                i.putExtra("tableID",tableNo);
+                i.putExtra("guest",1);
                 startActivity(i);
                 dismiss();
             }

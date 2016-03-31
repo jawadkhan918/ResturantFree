@@ -1,7 +1,4 @@
-/*
 package com.rapidzz.project;
-
-import android.content.ClipData;
 
 import java.util.ArrayList;
 
@@ -46,4 +43,3 @@ public class ItemList {
 	}
 
 }
-*/

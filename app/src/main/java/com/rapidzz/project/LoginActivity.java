@@ -35,23 +35,16 @@ public class LoginActivity extends Activity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         tView = (TextView) findViewById(R.id.timeView);
         password = (EditText) findViewById(R.id.passText);
-      /*  Calendar c = Calendar.getInstance();
-        System.out.println("Current time => "+c.getTime());
 
-        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
-        formattedDate = df.format(c.getTime());
-        // formattedDate have current date/time
-        Toast.makeText(this, formattedDate, Toast.LENGTH_SHORT).show();
-*/
         loginBtn = (Button) findViewById(R.id.btnLogin);
-       // tabBtn = (Button) findViewById(R.id.tabBtn);
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
           String checker= checkPass();
                 if(checker.equals("login")){
                     pass="";
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent i = new Intent(getApplicationContext(), DecisionActivity.class);
                 startActivity(i);
               }else if(checker.equals("empty")){
                     Toast.makeText(LoginActivity.this, "Please enter Password", Toast.LENGTH_SHORT).show();

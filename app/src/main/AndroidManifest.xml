@@ -1,110 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rapidzz.project">
+    package="com.rapidzz.project" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
             android:noHistory="true"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DeliveryActivity"
             android:label="Delivery"
             android:noHistory="true"
-            android:parentActivityName="com.rapidzz.project.MainActivity"
-            />
-
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            />
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TakeoutActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
         <activity
             android:name=".OrderActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
         <activity
             android:name=".TableGuestActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
         <activity
             android:name=".Recycler"
-            android:theme="@style/AppTheme.NoActionBar">
-
-            </activity>
-
-
-
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
         <activity
             android:name=".OrderingTabs"
-            android:theme="@style/AppTheme.NoActionBar">
-
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
-
         <activity
             android:name=".MainOrderActivity"
-            android:theme="@style/MyMaterialTheme"
-            android:parentActivityName="com.rapidzz.project.MainActivity"
             android:label="Orders"
-
-            >
-
-
-
-        <intent-filter>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyMaterialTheme" >
+            <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ExpenseActivity"
-            android:parentActivityName="com.rapidzz.project.MainActivity"
-        />
-
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DeliverySpinnerActivity"
             android:label="Delivery"
-            android:parentActivityName="com.rapidzz.project.MainActivity"
-
-            >
-        <intent-filter>
-            <action android:name="android.intent.action.SEARCH" />
-        </intent-filter>
+            android:parentActivityName=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
         </activity>
-
         <activity
             android:name=".ReportSpinnerAcitvity"
             android:label="Report"
             android:noHistory="true"
-            android:parentActivityName="com.rapidzz.project.MainActivity"
-            />
-
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DecisionActivity"
+            android:label="@string/title_activity_decision"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".ItemDetailActivity" >
+        </activity>
     </application>
-
 
 </manifest>

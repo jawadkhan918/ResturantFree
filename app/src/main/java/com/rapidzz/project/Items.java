@@ -40,4 +40,20 @@ public class Items {
     public void setItemId(int itemId) {
         this.itemId = itemId;
     }
+
+    public int getCatId() {
+        return catId;
+    }
+
+    public void setCatId(int catId) {
+        this.catId = catId;
+    }
+
+    public double getItem_price() {
+        return item_price;
+    }
+
+    public void setItem_price(double item_price) {
+        this.item_price = item_price;
+    }
 }
