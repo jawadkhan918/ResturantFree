@@ -18,6 +18,10 @@ public class ItemDetailActivity extends AppCompatActivity implements View.OnClic
     RadioButton radioSizeBtn;
     private RadioGroup radioSize;
     Button btnAdd;
+    String add = null;
+    String red = null;
+    CheckBox kwee,noodle;
+    CheckBox garlic,corriander;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,11 @@ public class ItemDetailActivity extends AppCompatActivity implements View.OnClic
 
     }
     public void init(){
+        kwee = (CheckBox) findViewById(R.id.chkKweeTiaw) ;
+        noodle = (CheckBox) findViewById(R.id.chkNoodle);
+        garlic =  (CheckBox) findViewById(R.id.chkNoGarlic);
+        corriander = (CheckBox) findViewById(R.id.chkNoCorriander);
+
         txtItemTitle = (TextView)findViewById(R.id.txtItemTitle);
         edQty = (EditText)findViewById(R.id.edQty);
         edRemarks = (EditText)findViewById(R.id.edRemarks);
@@ -64,7 +73,28 @@ public class ItemDetailActivity extends AppCompatActivity implements View.OnClic
             int selectedId = radioSize.getCheckedRadioButtonId();
             radioSizeBtn = (RadioButton) findViewById(selectedId);
 
-            TableGuestActivity.dishesList.add(new Dishes(1,qty, "","",  remarks,radioSizeBtn.getText().toString()));
+            if(kwee.isChecked()){
+                add = "Kwee";
+            }else if(noodle.isChecked()){
+                if(add.equals(null)){
+                    add = "Noodle";
+                }else{
+                    add += ",Noodle";
+                }
+            }
+
+            if(garlic.isChecked()){
+                red = "No Garlic";
+            }else if(corriander.isChecked()){
+                if(red.equals(null)){
+                    red = "No Corriander";
+                }else{
+                    red += ",No Corriander";
+                }
+            }
+
+
+            TableGuestActivity.dishesList.add(new Dishes(1,qty, add,red,  remarks,radioSizeBtn.getText().toString()));
             finish();
            }
     }
