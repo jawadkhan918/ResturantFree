@@ -25,6 +25,11 @@ public class ItemDetailActivity extends AppCompatActivity implements View.OnClic
     int position = -1;
     int itemId = -1;
 
+    String add = null;
+    String red = null;
+    CheckBox kwee,noodle;
+    CheckBox garlic,corriander;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,6 +112,7 @@ public class ItemDetailActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+
     public void updateOrder(){
         if (!"".equals(edQty.getText().toString())) {
             double qty = Double.parseDouble(edQty.getText().toString());
@@ -114,9 +120,30 @@ public class ItemDetailActivity extends AppCompatActivity implements View.OnClic
             int selectedId = radioSize.getCheckedRadioButtonId();
             radioSizeBtn = (RadioButton) findViewById(selectedId);
             itemId = TableGuestActivity.dishesList.get(position).getDishId();
+            if(kwee.isChecked()){
+                add = "Kwee";
+            }else if(noodle.isChecked()){
+                if(add.equals(null)){
+                    add = "Noodle";
+                }else{
+                    add += ",Noodle";
+                }
+            }
+
+            if(garlic.isChecked()){
+                red = "No Garlic";
+            }else if(corriander.isChecked()){
+                if(red.equals(null)){
+                    red = "No Corriander";
+                }else{
+                    red += ",No Corriander";
+                }
+            }
+
             TableGuestActivity.dishesList.remove(position);
-            TableGuestActivity.dishesList.add(position, new Dishes(itemId, qty, "", "", remarks, radioSizeBtn.getText().toString(), mTitle));
+            TableGuestActivity.dishesList.add(position, new Dishes(itemId, qty, add, red, remarks, radioSizeBtn.getText().toString(), mTitle));
             Toast.makeText(ItemDetailActivity.this, "" + itemId, Toast.LENGTH_SHORT).show();
+
             finish();
         }
     }
