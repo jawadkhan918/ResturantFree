@@ -5,6 +5,7 @@ package com.rapidzz.project;
 public class TableModel {
     int status,table_id,table_numperson,table_status,table_active;
     String table_name="",table_number;
+    Boolean occupied;
 
     public TableModel(int status, int table_id , String table_number,  int table_numperson, String table_name   , int table_status,int table_active) {
         this.status = status;
@@ -14,6 +15,8 @@ public class TableModel {
         this.table_number = table_number;
         this.table_numperson = table_numperson;
         this.table_status = table_status;
+        occupied = true;
+
     }
 
     public int getStatus() {
@@ -72,5 +75,19 @@ public class TableModel {
         this.table_status = table_status;
     }
 
+    public int getTable_numperson() {
+        return table_numperson;
+    }
 
+    public void setTable_numperson(int table_numperson) {
+        this.table_numperson = table_numperson;
+    }
+
+    public Boolean getOccupied() {
+        return occupied;
+    }
+
+    public void setOccupied(Boolean occupied) {
+        this.occupied = occupied;
+    }
 }

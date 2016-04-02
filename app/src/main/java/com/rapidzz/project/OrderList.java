@@ -4,42 +4,51 @@ import java.util.ArrayList;
 
 public class OrderList {
 
-	private ArrayList<Order> mOrders;
-	private static OrderList sOrderList;
+    private ArrayList<Order> mOrders;
+    private static OrderList sOrderList;
 
-	private OrderList() {
-		mOrders = new ArrayList<Order>();
-	}
+    private OrderList() {
+        mOrders = new ArrayList<Order>();
+    }
 
-	public static OrderList get() {
-		if (sOrderList == null) {
-			sOrderList = new OrderList();
-		}
-		return sOrderList;
-	}
+    public static OrderList get() {
+        if (sOrderList == null) {
+            sOrderList = new OrderList();
+        }
+        return sOrderList;
+    }
 
-	public ArrayList<Order> getItems() {
-		return mOrders;
-	}
+    public ArrayList<Order> getOrders() {
+        return mOrders;
+    }
 
-	public Boolean getCat(String cat) {
+    public Boolean getCat(String cat) {
 
-			return false;
-	}
+        return false;
+    }
 
-	public Categories getCat(int id ) {
+    public Categories getCat(int id) {
 
-			return null;
-	}
+        return null;
+    }
 
-	public void addCategories(Order newCat) {
-		mOrders.add(newCat);
-	}
+    public void addOrder(Order newOrder) {
+        mOrders.add(newOrder);
+    }
 
-	public void clearCategories() {
+    public void clearCategories() {
 
-		mOrders.clear();
+        mOrders.clear();
 
-	}
+    }
+
+    public Order getOrder(int tableName) {
+		for(int i = 0;i < mOrders.size() ; i++){
+            if(tableName == mOrders.get(i).getTableId()){
+                return mOrders.get(i);
+            }
+        }
+        return null;
+    }
 
 }

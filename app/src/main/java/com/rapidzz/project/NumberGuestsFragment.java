@@ -15,15 +15,15 @@ import android.widget.Button;
  */public class NumberGuestsFragment  extends DialogFragment {
 
     private Dialog dialog;
-String tableNo;
+int tableNo;
     Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12;
 
 
     public NumberGuestsFragment(){
     }
-    public NumberGuestsFragment(String tableNo){
+    public NumberGuestsFragment(int tableNo){
         this.tableNo = tableNo;
-        Log.d("TableNO",tableNo);
+        Log.d("TableNO",""+tableNo);
     }
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","1");
                 startActivity(i);
 
                 dismiss();
@@ -58,7 +58,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","2");
                 startActivity(i);
                 dismiss();
             }
@@ -72,7 +72,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","3");
                 startActivity(i);
                 dismiss();
             }
@@ -86,7 +86,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","4");
                 startActivity(i);
                 dismiss();
             }
@@ -100,25 +100,12 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","5");
                 startActivity(i);
                 dismiss();
             }
         });
 
-        btn5 = (Button) view.findViewById(R.id.button5);
-        btn5.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent i = new Intent(getActivity(), TableGuestActivity.class);
-                i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
-                startActivity(i);
-                dismiss();
-            }
-        });
 
         btn6 = (Button) view.findViewById(R.id.button6);
         btn6.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +115,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","6");
                 startActivity(i);
                 dismiss();
             }
@@ -142,7 +129,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","7");
                 startActivity(i);
                 dismiss();
             }
@@ -156,7 +143,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","8");
                 startActivity(i);
                 dismiss();
             }
@@ -170,7 +157,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","9");
                 startActivity(i);
                 dismiss();
             }
@@ -184,7 +171,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","10");
                 startActivity(i);
                 dismiss();
             }
@@ -198,7 +185,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","11");
                 startActivity(i);
                 dismiss();
             }
@@ -213,7 +200,7 @@ String tableNo;
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity(), TableGuestActivity.class);
                 i.putExtra("tableID",tableNo);
-                i.putExtra("guest",1);
+                i.putExtra("guest","12");
                 startActivity(i);
                 dismiss();
             }

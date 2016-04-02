@@ -7,16 +7,17 @@ public class Dishes {
 
     private int dishId;
     private double dishQty;
-    private String dishAdd,dishReduction,dishRemarks,dishSize;
+    private String dishAdd,dishReduction,dishRemarks,dishSize,dishName;
 
 
-    public Dishes(int dishId, double dishQty, String dishAdd, String dishReduction, String dishRemarks, String dishSize) {
+    public Dishes(int dishId, double dishQty, String dishAdd, String dishReduction, String dishRemarks, String dishSize,String dishName) {
         this.dishId = dishId;
         this.dishQty = dishQty;
         this.dishAdd = dishAdd;
         this.dishReduction = dishReduction;
         this.dishRemarks = dishRemarks;
         this.dishSize = dishSize;
+        this.dishName = dishName;
     }
 
     public int getDishId() {
@@ -65,5 +66,13 @@ public class Dishes {
 
     public void setDishSize(String dishSize) {
         this.dishSize = dishSize;
+    }
+
+    public String getDishName() {
+        return dishName;
+    }
+
+    public void setDishName(String dishName) {
+        this.dishName = dishName;
     }
 }

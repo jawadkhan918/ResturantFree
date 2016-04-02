@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -31,8 +32,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import junit.framework.Test;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,7 +39,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener,View.OnClickListener {
+public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     String loginURL = "http://www.pakwedds.com/Restaurant_app/get_table_list.php";
     private ProgressDialog mProcessDialog;
     public static boolean check = true;
@@ -48,8 +47,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     RequestQueue requestQueue;
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
+    StaggeredGridLayoutManager sglm;
     Button deliveryBtn, tabBtn, takeoutBtn, menuBtn, orderBtn;
-    public List<TableModel> listItems = new ArrayList<TableModel>();
+    public  List<TableModel> listItems = new ArrayList<TableModel>();
     private String[] paths = {"Drawer", "Delivery", "Expense", "Pay In/Out", "Customer", "Member Analyze", "Time Clock", "Receipt", "Report", "Database", "Settings", "Purchase", "LogOut"};
 
     @Override
@@ -61,16 +61,26 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         mProcessDialog.setCancelable(false);
         requestQueue = Volley.newRequestQueue(this);
 
-        if (listItems.isEmpty())
+        if (listItems.isEmpty()) {
             getTableList();
+
+        }
+
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         linearLayoutManager = new LinearLayoutManager(this);
 
         adapter = new MyRecyclerAdapter(listItems);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        adapter.setHasStableIds(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
+      /*  adapter = new MyRecyclerAdapter(listItems);
+        sglm = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(sglm);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        recyclerView.setAdapter(adapter);*/
+
+
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_spinner_item, paths);
@@ -167,10 +177,17 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
                                 TableModel model = new TableModel(status, table_id, table_number, table_numperson, table_name, table_status, table_active);
                                 listItems.add(model);
-                                Log.i("name is", table_name);
-                                adapter.notifyDataSetChanged();
                                 mProcessDialog.dismiss();
                             }
+                            for (int j = 0; j < OrderList.get().getOrders().size(); j++) {
+                                for (int i = 0; i < listItems.size(); i++) {
+                                    if (OrderList.get().getOrders().get(j).getTableId() == listItems.get(i).getTable_id()) {
+                                        listItems.get(i).setOccupied(false);
+                                    }
+                                }
+                            }
+                            Log.e("SIZE", "" + OrderList.get().getOrders().size());
+                            adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                             mProcessDialog.dismiss();
@@ -221,6 +238,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
             String selection = ((TextView) arg1).getText().toString();
             if (selection.equals("Drawer")) {
                 Toast.makeText(getApplicationContext(), "Drawer", Toast.LENGTH_SHORT).show();
+                adapter.notifyDataSetChanged();
             } else if (selection.equals("Delivery")) {
                 Intent intent = new Intent(getApplicationContext(), DeliverySpinnerActivity.class);
                 startActivity(intent);
@@ -300,7 +318,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         }
     }
 
-    public void guestMethod(String tableNo) {
+    public void guestMethod(int tableNo) {
         //      tToast("Go button cli
         FragmentManager fm = getFragmentManager();
         //FragmentManager fm = this.getFragmentManager();
@@ -324,15 +342,15 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
         //    private static final int TYPE_HEADER = 0;
         private static final int TYPE_ITEM = 0;
-        RelativeLayout table1,table2;
-        List<TableModel> listItems;
+        RelativeLayout table1, table2;
+        List<TableModel> listItems2;
         TextView table1Manager;
 
-        public MyRecyclerAdapter(List<TableModel> listItems) {
-            this.listItems = listItems;
-         //   table1 = (RelativeLayout)findViewById(R.id.table1);
-          //  table2 = (RelativeLayout)findViewById(R.id.table2);
 
+        public MyRecyclerAdapter(List<TableModel> listItems3) {
+            this.listItems2 = listItems3;
+            //   table1 = (RelativeLayout)findViewById(R.id.table1);
+            //  table2 = (RelativeLayout)findViewById(R.id.table2);
 
 
         }
@@ -350,7 +368,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         private TableModel getItem(int position) {
 
 
-            return listItems.get(position);
+            return listItems2.get(position);
 
         }
 
@@ -361,16 +379,27 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
             VHItem VHitem = (VHItem) holder;
             Log.i("1", currentItem.getTable_name());
             Log.i("2", currentItem.getTable_name());
-            if (VHitem.table1.getVisibility() == View.GONE && check == true) {
+          /*  if (VHitem.table1.getVisibility() == View.GONE && check == true) {*/
                 check = false;
                 VHitem.table1.setVisibility(View.VISIBLE);
                 VHitem.table1Text.setText(currentItem.getTable_name());
-            } else {
+                Log.e("CALL",currentItem.getTable_name()+" POS: " + position + " SIZE: " + listItems2.size() );
+                //  Order order =   OrderList.get().getOrder(currentItem.getTable_id());
+                if (!listItems.get(position).getOccupied()) {
+                    VHitem.table1.setBackgroundResource(R.drawable.shape_layout_select);
+                }
+
+
+          /*  } else {
+
+                Log.e("CALL",currentItem.getTable_name()+" POS: " + position);
                 check = true;
                 VHitem.table2.setVisibility(View.VISIBLE);
+               *//* if (!listItems.get(position).getOccupied()) {
+                    VHitem.table1.setBackgroundResource(R.drawable.shape_layout_select);
+                }*//*
                 VHitem.table2Text.setText(currentItem.getTable_name());
-            }
-
+            }*/
         }
 
         @Override
@@ -380,7 +409,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
         @Override
         public int getItemCount() {
-            return listItems.size();
+            return listItems2.size();
         }
 
         class VHItem extends RecyclerView.ViewHolder {
@@ -404,21 +433,42 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 table1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        table1Manager = (TextView)findViewById(R.id.table1Manager);
-                       // Toast.makeText(MainActivity.this,table1Text.getText().toString(),Toast.LENGTH_SHORT).show();
-                        guestMethod(table1Text.getText().toString());
+                        table1Manager = (TextView) findViewById(R.id.table1Manager);
+                        guestMethod(listItems2.get(getAdapterPosition()).getTable_id());
                     }
                 });
                 table2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        guestMethod(listItems2.get(getAdapterPosition()).getTable_id());
                     }
                 });
 
             }
+
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        /*Boolean flag = false;
+        Log.e("SIZE", "" + OrderList.get().getOrders().size());
+        ArrayList<TableModel> tabArr = new ArrayList<TableModel>();
+        tabArr.addAll(listItems);
+        listItems.clear();
+        listItems.addAll(tabArr);*/
 
+        for (int j = 0; j < OrderList.get().getOrders().size(); j++) {
+            for (int i = 0; i < listItems.size(); i++) {
+                if (OrderList.get().getOrders().get(j).getTableId() == listItems.get(i).getTable_id()) {
+                  listItems.get(i).setOccupied(false);
+
+                }
+            }
+
+        }
+        adapter.notifyDataSetChanged();
+
+    }
 }

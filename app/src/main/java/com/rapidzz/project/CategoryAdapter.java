@@ -85,18 +85,23 @@ Context mContext;
                 public void onClick(View v) {
                     parentPosition = getAdapterPosition();
                     Items itemObj = visibleItems.get(parentPosition).item;
-                    Toast.makeText(mContext,""+TableGuestActivity.dishesList.size(),Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(mContext,""+TableGuestActivity.dishesList.size(),Toast.LENGTH_SHORT).show();
                   //  Toast.makeText(mContext,visibleItems.get(parentPosition).item.getItemName(),Toast.LENGTH_SHORT).show();
                     if(orderList.containsKey(itemObj.getItemId())){
 
                         Intent i = new Intent(mContext, ItemDetailActivity.class);
                         i.putExtra("title",visibleItems.get(parentPosition).item.getItemName());
+                        i.putExtra("itemID",visibleItems.get(parentPosition).item.getItemId());
+                        Toast.makeText(mContext, "" + visibleItems.get(parentPosition).item.getItemId(), Toast.LENGTH_SHORT).show();
+
                         mContext.startActivity(i);
                       /*  Order order = orderList.get(itemObj.getItemId());
                         order.setQty(order.getQty()+1);*/
                     }else{
                         Intent i = new Intent(mContext, ItemDetailActivity.class);
                         i.putExtra("title",visibleItems.get(parentPosition).item.getItemName());
+                        i.putExtra("itemID",visibleItems.get(parentPosition).item.getItemId());
+
                         mContext.startActivity(i);
 
                       //  orderList.put(itemObj.getItemId(),new Order(itemObj.getItemId(),1));
