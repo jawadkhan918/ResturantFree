@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:label="@string/app_name"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar"
@@ -23,66 +23,66 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DeliveryActivity"
+            android:name=".Activities.DeliveryActivity"
             android:label="Delivery"
             android:noHistory="true"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TakeoutActivity"
+            android:name=".Activities.TakeoutActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".OrderActivity"
+            android:name=".Activities.OrderActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".TableGuestActivity"
+            android:name=".Activities.TableGuestActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".Recycler"
+            android:name=".Activities.Recycler"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".OrderingTabs"
+            android:name=".Activities.OrderingTabs"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".MainOrderActivity"
+            android:name=".Activities.MainOrderActivity"
             android:label="Orders"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".Activities.MainActivity"
             android:theme="@style/MyMaterialTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ExpenseActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Activities.ExpenseActivity"
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".DeliverySpinnerActivity"
+            android:name=".Activities.DeliverySpinnerActivity"
             android:label="Delivery"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ReportSpinnerAcitvity"
+            android:name=".Activities.ReportSpinnerAcitvity"
             android:label="Report"
             android:noHistory="true"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".DecisionActivity"
+            android:name=".Activities.DecisionActivity"
             android:label="@string/title_activity_decision"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".ItemDetailActivity" >
+        <activity android:name=".Activities.ItemDetailActivity" >
         </activity>
-        <activity android:name=".OrderDetailActivity" >
+        <activity android:name=".Activities.OrderDetailActivity" >
         </activity>
     </application>
 
